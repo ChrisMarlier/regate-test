@@ -1,24 +1,40 @@
-# README
+Christopher Marlier | Regate.io test | 2021
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby 3.0.0 & Rails 6.1.3
 
-Things you may want to cover:
+# INSTALLATION
 
-* Ruby version
+Run this command to install the dependencies
 
-* System dependencies
+    bundle install
 
-* Configuration
+You can now launch the project with
 
-* Database creation
+    rails server
 
-* Database initialization
+You can now access with your web browser to http://localhost:3000
 
-* How to run the test suite
+(If port 3000 is already in use, rails will choose another port and print it on the console. Change the 3000 in the README url to match yours)
 
-* Services (job queues, cache servers, search engines, etc.)
+# AVAILABLE ROUTES
 
-* Deployment instructions
+You can access 3 routes on this project :
 
-* ...
+
+* http://localhost:3000/pokemons
+
+Wich will list the pokemons
+
+You can choose which page you want to render with
+
+http://localhost:3000/pokemons?page=12
+
+
+* http://localhost:3000/pokemons/rattata or http://localhost:3000/pokemons/19
+
+Will return the requested pokemon. You can get it by its name or id 
+
+
+* http://localhost:3000/pokemons/random
+
+Will return a random Pokemon 
