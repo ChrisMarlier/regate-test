@@ -15,6 +15,14 @@ class PokemonsController < ApplicationController
         end
     end
 
+    def random
+        begin 
+            render :json => {:pokemon => PokemonManager::GetPokemon.new.call(rand(1..898))}
+        rescue
+            render :json => {"error" => "Pokemon not found"}
+        end
+    end
+
     private
 
     def show_params
