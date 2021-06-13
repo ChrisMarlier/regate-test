@@ -1,7 +1,7 @@
 class PokemonsController < ApplicationController
     def index
         begin
-            render :json => {:pokemons => PokemonManager::ListPokemon.new.call}
+            render :json => {:pokemons => PokemonManager::ListPokemon.new.call(index_params["page"])}
         rescue
             render :json => {"error" => "Error while fetching Pokemon API"}
         end  
@@ -24,6 +24,10 @@ class PokemonsController < ApplicationController
     end
 
     private
+
+    def index_params
+        params.permit(:page)
+    end
 
     def show_params
         params.require(:id)
